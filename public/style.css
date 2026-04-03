@@ -224,18 +224,96 @@ body {
 }
 
 /* About Section */
+.about {
+    position: relative;
+}
+
 .about-content {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
-    max-width: 800px;
+    max-width: 1100px;
+    background: rgba(20, 20, 20, 0.5);
+    padding: 4rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    position: relative;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.about-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--accent-gradient);
+}
+
+/* Background ornament */
+.about-content::after {
+    content: '</>';
+    position: absolute;
+    bottom: 2rem;
+    right: 3rem;
+    font-size: 10rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.02);
+    pointer-events: none;
+    line-height: 1;
+    z-index: 0;
 }
 
 .about-content p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
 }
 
 .about-content strong {
     color: var(--text-primary);
+    background: linear-gradient(to right, #6e45e2, #88d3ce);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* Background elements for about section */
+.about .shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about .shape-1 {
+    top: 20%;
+    left: -10%;
+    width: 450px;
+    height: 450px;
+    background: #6e45e2;
+    opacity: 0.15;
+}
+
+.about .shape-2 {
+    bottom: -10%;
+    right: -5%;
+    width: 350px;
+    height: 350px;
+    background: #88d3ce;
+    opacity: 0.1;
 }
 
 /* Skills Section */
@@ -369,6 +447,7 @@ body {
     font-weight: 800;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     min-width: 1.2rem;
     text-align: center;
@@ -417,5 +496,18 @@ footer {
 
     .section {
         padding: 4rem 5%;
+    }
+
+    .about-content {
+        padding: 2.5rem 1.5rem;
+        text-align: left;
+        font-size: 1.05rem;
+        border-radius: 20px;
+    }
+
+    .about-content::after {
+        font-size: 5rem;
+        bottom: 1rem;
+        right: 1.5rem;
     }
 }
