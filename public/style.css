@@ -402,6 +402,33 @@ body {
     color: var(--text-secondary);
 }
 
+.experience-list {
+    margin-top: 1.2rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+.experience-list li {
+    margin-bottom: 0.8rem;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.5;
+}
+
+.experience-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: 800;
+}
+
+.experience-list li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
 /* Contact */
 .contact {
     text-align: center;
